@@ -146,4 +146,4 @@ graph TD
 
 ### 🔚 End of Day 1
 
-Coming up next: **GitHub Actions & CI Concepts**
+
