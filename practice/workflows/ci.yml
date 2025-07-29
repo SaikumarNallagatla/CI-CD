@@ -1,0 +1,16 @@
+name: Simple CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Say Hello from GitHub Actions
+        run: echo "🎉 GitHub Actions triggered successfully!"
