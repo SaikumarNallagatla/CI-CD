@@ -2,13 +2,10 @@ name: sai CI pipeline
 
 on:
   push:
-    branches:
-      - main
-      - featurebranch
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-      - featurebranch
+    branches: [ main ]
+  
 
 jobs:
   test:
