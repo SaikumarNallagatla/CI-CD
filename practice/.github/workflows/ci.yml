@@ -1,16 +1,30 @@
-name: Simple CI Workflow
+name: sai CI pipeline
 
 on:
   push:
     branches:
       - main
+      - featurebranch
+  pull_request:
+    branches:
+      - main
+      - featurebranch
 
 jobs:
-  hello-world:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: checkout code
+        uses: actions/checkout@v4
 
-      - name: Say Hello from GitHub Actions
-        run: echo "🎉 GitHub Actions triggered successfully!"
+      - name: setup node.js
+        uses: actions/setup-python@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: install dependencies
+        run: npm install
+
+      - name: run tests
+        run: npm test

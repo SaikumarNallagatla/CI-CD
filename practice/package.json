@@ -1,0 +1,6 @@
+{
+  "name": "ci-learning",
+  "scripts": {
+    "test": "node test.js"
+  }
+}
